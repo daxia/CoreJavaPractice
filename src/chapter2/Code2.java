@@ -1,8 +1,10 @@
 package chapter2;
 
 import java.awt.EventQueue;
+import java.awt.Label;
 import java.awt.event.*;
 import java.io.*;
+
 import javax.swing.*;
 
 /**
@@ -21,9 +23,38 @@ public class Code2 {
 			@Override
 			public void run() {
 				// TODO Auto-generated method stub
-				System.out.println();
+				JFrame frame = new ImageViewFrame();
+				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				frame.setVisible(true);
 			}
 		});
 	}
 
+}
+
+/**
+ * 类说明:
+ * 
+ * @author wsz
+ *
+ */
+class ImageViewFrame extends JFrame
+{
+	private static final int DEFAULT_WIDTH = 300;
+	private static final int DEFAULT_HIGH = 300;
+	
+	private JLabel label;
+	
+	public ImageViewFrame()
+	{
+		setTitle("ImageViewer");
+		
+		setSize(DEFAULT_WIDTH, DEFAULT_HIGH);
+		
+		//使用一个label来显示image
+		label = new JLabel();
+		add(label);
+		
+		
+	}
 }
