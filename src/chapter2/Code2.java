@@ -43,7 +43,8 @@ class ImageViewFrame extends JFrame
 	private static final int DEFAULT_WIDTH = 300;
 	private static final int DEFAULT_HIGH = 300;
 	
-	private JLabel label;
+	private JLabel label;       //一个 新的 label
+	private JFileChooser fileChooser;
 	
 	public ImageViewFrame()
 	{
@@ -54,6 +55,29 @@ class ImageViewFrame extends JFrame
 		//使用一个label来显示image
 		label = new JLabel();
 		add(label);
+		
+		//设置文件选择
+		fileChooser = new JFileChooser();
+		fileChooser.setCurrentDirectory(new File("."));
+		
+		//添加菜单栏
+		JMenuBar menuBar = new JMenuBar();
+		setJMenuBar(menuBar);
+		
+		//添加菜单
+		JMenu menu = new JMenu("File");
+		menuBar.add(menu);
+		
+		JMenuItem openItem = new JMenuItem("Open");
+		menuBar.add(openItem);
+		openItem.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				int result = fileChooser.showOpenDialog(null);
+			}
+		});
 		
 		
 	}
