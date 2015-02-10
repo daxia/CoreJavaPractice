@@ -1,7 +1,6 @@
 package chapter2;
 
 import java.awt.EventQueue;
-import java.awt.Label;
 import java.awt.event.*;
 import java.io.*;
 
@@ -11,6 +10,7 @@ import javax.swing.*;
  * 类说明：
  * <P>
  * 创建一个窗口并展示图片程序
+ * @version 1.00 2015.2.10
  * @author wsz
  *
  */
@@ -41,7 +41,7 @@ public class Code2 {
 class ImageViewFrame extends JFrame
 {
 	private static final int DEFAULT_WIDTH = 300;
-	private static final int DEFAULT_HIGH = 300;
+	private static final int DEFAULT_HIGH = 400;
 	
 	private JLabel label;       //一个 新的 label
 	private JFileChooser fileChooser;
@@ -75,10 +75,28 @@ class ImageViewFrame extends JFrame
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
+				//show file choose dialog
 				int result = fileChooser.showOpenDialog(null);
+				
+				//if file selected , 设置成label的ico
+				if(result == JFileChooser.APPROVE_OPTION)
+				{
+					String name = fileChooser.getSelectedFile().getPath();
+					label.setIcon(new ImageIcon(name));
+				}
 			}
 		});
 		
-		
+		//退出
+		JMenuItem exitItem = new JMenuItem("Exit");
+		menuBar.add(exitItem);
+		exitItem.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				System.exit(0);
+			}
+		});
 	}
 }
