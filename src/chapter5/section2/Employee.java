@@ -2,8 +2,6 @@ package chapter5.section2;
 
 import java.util.*;
 
-import org.omg.CORBA.PUBLIC_MEMBER;
-
 public class Employee {
 
 	private String name;
