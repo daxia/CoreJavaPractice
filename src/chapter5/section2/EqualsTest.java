@@ -39,5 +39,8 @@ public class EqualsTest {
 		System.out.println("wsz2.hashCode: " + wsz2.hashCode());
 		System.out.println("wsz3.hashCode: " + wsz3.hashCode());
 		System.out.println("gao.hashCode: " + gao.hashCode());
+		
+		System.out.println("gao.getClass():" + gao.getClass());
+		System.out.println("gao.getClass().getName():" + gao.getClass().getName());
 	}
 }
