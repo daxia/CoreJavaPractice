@@ -1,4 +1,4 @@
-package chapter5.section2;
+package chapter5.equals;
 
 import java.util.*;
 
