@@ -1,4 +1,4 @@
-package chapter7.$73_notHelloworld;
+package chapter7._3_notHelloworld;
 
 import java.awt.Dimension;
 import java.awt.EventQueue;
