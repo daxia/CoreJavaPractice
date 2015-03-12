@@ -42,7 +42,6 @@ class NotHelloWorldComponent extends JComponent{
 	public void paintComponent(Graphics g)
 	{
 		g.drawString("", MESSAGE_X, MESSAGE_Y);
-		
 	}
 	
 	public Dimension getPreferedSize()
